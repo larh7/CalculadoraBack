@@ -1,7 +1,6 @@
-
-USE [HistoryDB]
+ USE [HistoryDB]
 GO
-/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 2/8/2022 4:26:26 PM ******/
+/****** Object:  Table [dbo].[__EFMigrationsHistory]    Script Date: 2/8/2022 4:33:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -15,7 +14,7 @@ CREATE TABLE [dbo].[__EFMigrationsHistory](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[history]    Script Date: 2/8/2022 4:26:26 PM ******/
+/****** Object:  Table [dbo].[history]    Script Date: 2/8/2022 4:33:52 PM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -31,4 +30,13 @@ CREATE TABLE [dbo].[history](
 	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+INSERT [dbo].[__EFMigrationsHistory] ([MigrationId], [ProductVersion]) VALUES (N'20220208184550_v1.0.0', N'5.0.3')
+GO
+SET IDENTITY_INSERT [dbo].[history] ON 
+
+INSERT [dbo].[history] ([Id], [number1], [number2], [operation], [EnrollmentDate]) VALUES (1, 1, 0, N'Factorial', CAST(N'2022-08-02T00:00:00.0000000' AS DateTime2))
+INSERT [dbo].[history] ([Id], [number1], [number2], [operation], [EnrollmentDate]) VALUES (3, 3, 5, N'Suma', CAST(N'2022-03-08T00:00:00.0000000' AS DateTime2))
+INSERT [dbo].[history] ([Id], [number1], [number2], [operation], [EnrollmentDate]) VALUES (4, 8, 2, N'Resta', CAST(N'2022-02-08T00:00:00.0000000' AS DateTime2))
+SET IDENTITY_INSERT [dbo].[history] OFF
 GO
